@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tests:
-        description: Newline-separated list of tests to run. Runs all if empty.
+        description: Comma-separated list of tests to run. Runs all if empty. Accepts wildcards * . Just the name with no [] matches all parameter sets.
         required: false
       repeat:
         description: Number of times to repeat the tests. Defaults to 1.
