@@ -33,6 +33,8 @@ jobs:
         with:
           message: |
             Hello in PR ${{ steps.findPr.outputs.pr }}!
+            ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
             
       - name: Send greeting
         run: echo "${{ github.event.inputs.tests }} ${{ github.event.inputs.repeat }}"
