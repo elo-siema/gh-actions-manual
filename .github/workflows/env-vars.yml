@@ -17,4 +17,4 @@ jobs:
       pull-requests: write
     steps:
       # Print environment variables
-      - run: env | sort
+      - run: echo ${{ vars.ENABLE_TEST_QUARANTINING}}
