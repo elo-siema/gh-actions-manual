@@ -1,0 +1,20 @@
+name: Integration tests - manual trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      tests:
+        description: Comma-separated list of tests to run. Runs all if empty. Accepts wildcards * . Just the name with no [] matches all parameter sets.
+        required: false
+      repeat:
+        description: Number of times to repeat the tests. Defaults to 1.
+        required: false
+        default: 1
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send greeting
+        run: echo "${{ github.event.inputs.tests }} ${{ github.event.inputs.repeat }}"

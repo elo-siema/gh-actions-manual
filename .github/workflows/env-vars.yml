@@ -1,0 +1,20 @@
+---
+name: Unit Tests
+on:
+  pull_request:
+    paths:
+      - "**"
+  push:
+    paths:
+      - "**"
+    branches:
+      - master
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      # Print environment variables
+      - run: echo ${{ vars.ENABLE_TEST_QUARANTINING}}
